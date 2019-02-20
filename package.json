@@ -1,0 +1,39 @@
+{
+  "name": "machlearn",
+  "version": "0.1.0",
+  "main": "public/main.js",
+  "homepage": "./",
+  "private": true,
+  "dependencies": {
+    "electron-is-dev": "^0.3.0",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-scripts": "1.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "electron-start": "electron .",
+    "electron-dev": "concurrently \"BROWSER=none npm start\" \"wait-on http://localhost:3000 && electron .\"",
+    "preelectron-pack": "npm build",
+    "electron-pack": "npm run-script build --em.main=build/electron.js"
+  },
+  "devDependencies": {
+    "electron": "^1.8.6",
+    "concurrently": "^3.5.1",
+    "electron-builder": "^20.10.0",
+    "wait-on": "^2.1.0"
+  },
+  "build": {
+    "appId": null,
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    }
+  }
+}
